@@ -5,8 +5,7 @@ public class Person {
     private String name;
     private int birth;
 
-    public Person(int id, String name, int birth) {
-        this.id = id;
+    public Person(String name, int birth) {
         this.name = name;
         this.birth = birth;
     }
@@ -16,6 +15,10 @@ public class Person {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

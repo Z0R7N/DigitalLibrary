@@ -4,10 +4,19 @@
     <meta charset="UTF-8">
     <title>People</title>
 </head>
-<p>hello</p>
 <body>
-<div th:each="person : ${people}" >
+<div th:each="person : ${people}">
     <a th:href="@{/people/{id}(id=${person.getId()})}" th:text="${person.getName() + ', ' + person.getBirth()}"></a>
 </div>
+<br/>
+<hr/>
+<form action="/library">
+    <input type="submit" value="Library"/>
+</form>
+<br/>
+<hr/>
+<a href="/library">Library</a>
+<br/>
+<hr/>
 </body>
 </html>

@@ -2,16 +2,14 @@ package ru.zoran.library.models;
 
 public class Book {
     private int id;
-    private int person_id;
     private String title;
     private String author;
     private int year;
 
-    public Book(int id, String title, String author, int year, int person_id) {
+    public Book(String title, String author, int year) {
         this.title = title;
         this.author = author;
         this.year = year;
-        this.person_id = person_id;
     }
 
     public Book() {
@@ -21,12 +19,8 @@ public class Book {
         return id;
     }
 
-    public int getPerson_id() {
-        return person_id;
-    }
-
-    public void setPerson_id(int person_id) {
-        this.person_id = person_id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
