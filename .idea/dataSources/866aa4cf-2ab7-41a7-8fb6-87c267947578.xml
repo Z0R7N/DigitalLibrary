@@ -785,7 +785,7 @@ false YEKT
 false Z
 false Zulu
 </TimeZones>
-      <StartupTime>1659538235</StartupTime>
+      <StartupTime>1660144618</StartupTime>
     </root>
     <database id="2" parent="1" name="first_db">
       <ObjectId>40985</ObjectId>
@@ -807,7 +807,7 @@ false Zulu
     <database id="6" parent="1" name="project1">
       <ObjectId>57394</ObjectId>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1980</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2011</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|57419|57420|1
 sequence|table|57427|57428|1
@@ -890,7 +890,7 @@ UC/10
 </Acl>
       <StateNumber>527</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionStateNumber>1981</IntrospectionStateNumber>
+      <IntrospectionStateNumber>2012</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <extension id="24" parent="6" name="plpgsql">
@@ -1057,14 +1057,24 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <key id="46" parent="38" name="book_pkey">
+    <index id="46" parent="38" name="book_title_uindex">
+      <ObjectId>65586</ObjectId>
+      <StateNumber>2010</StateNumber>
+      <ColNames>title</ColNames>
+      <Unique>1</Unique>
+      <AccessMethodId>403</AccessMethodId>
+      <CollationIds>100</CollationIds>
+      <CollationNames>default</CollationNames>
+      <ClassIds>3126</ClassIds>
+    </index>
+    <key id="47" parent="38" name="book_pkey">
       <ObjectId>57432</ObjectId>
       <StateNumber>1979</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>book_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="47" parent="38" name="book_person_id_fkey">
+    <foreign-key id="48" parent="38" name="book_person_id_fkey">
       <ObjectId>57433</ObjectId>
       <StateNumber>1979</StateNumber>
       <ColNames>person_id</ColNames>
@@ -1075,7 +1085,7 @@ UC/10
       <RefColNames>id</RefColNames>
       <OnDelete>set-null</OnDelete>
     </foreign-key>
-    <column id="48" parent="39" name="id">
+    <column id="49" parent="39" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1083,21 +1093,21 @@ UC/10
       <TypeId>23</TypeId>
       <IdentityKind>by-default</IdentityKind>
     </column>
-    <column id="49" parent="39" name="name">
+    <column id="50" parent="39" name="name">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1976</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="50" parent="39" name="birth">
+    <column id="51" parent="39" name="birth">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>1976</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="51" parent="39" name="person_pkey">
+    <index id="52" parent="39" name="person_pkey">
       <ObjectId>57423</ObjectId>
       <StateNumber>1976</StateNumber>
       <ColNames>id</ColNames>
@@ -1107,7 +1117,7 @@ UC/10
       <CollationIds>0</CollationIds>
       <ClassIds>1978</ClassIds>
     </index>
-    <index id="52" parent="39" name="person_name_key">
+    <index id="53" parent="39" name="person_name_key">
       <ObjectId>57425</ObjectId>
       <StateNumber>1976</StateNumber>
       <ColNames>name</ColNames>
@@ -1117,14 +1127,14 @@ UC/10
       <CollationNames>default</CollationNames>
       <ClassIds>3126</ClassIds>
     </index>
-    <key id="53" parent="39" name="person_pkey">
+    <key id="54" parent="39" name="person_pkey">
       <ObjectId>57424</ObjectId>
       <StateNumber>1976</StateNumber>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>person_pkey</UnderlyingIndexName>
     </key>
-    <key id="54" parent="39" name="person_name_key">
+    <key id="55" parent="39" name="person_name_key">
       <ObjectId>57426</ObjectId>
       <StateNumber>1976</StateNumber>
       <ColNames>name</ColNames>

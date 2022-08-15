@@ -1,12 +1,25 @@
 package ru.zoran.library.models;
 
+import javax.validation.Valid;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
 public class Book {
     private int id;
+
+    @NotEmpty(message = "Title should not be empty")
+    @Size(min = 2, max = 50, message = "Must be between 2 and 50 characters")
     private String title;
+
+    @NotEmpty(message = "Author should not be empty")
+    @Size(min = 2, max = 50, message = "Must be between 2 and 50 characters")
     private String author;
+
     private int year;
 
     public Book(String title, String author, int year) {
+
         this.title = title;
         this.author = author;
         this.year = year;

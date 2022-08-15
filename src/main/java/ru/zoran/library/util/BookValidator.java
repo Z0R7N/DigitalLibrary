@@ -26,7 +26,7 @@ public class BookValidator implements Validator {
     public void validate(Object target, Errors errors) {
         Book book = (Book) target;
         if (bookDAO.show(book.getTitle()).isPresent()){
-            errors.rejectValue("title", "This title aready exist");
+            errors.rejectValue("title", "","This title already exist");
         }
     }
 }

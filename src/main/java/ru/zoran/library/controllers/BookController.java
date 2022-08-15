@@ -7,7 +7,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.zoran.library.dao.BookDAO;
 import ru.zoran.library.models.Book;
+import ru.zoran.library.models.Person;
 import ru.zoran.library.util.BookValidator;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/library")
@@ -45,6 +48,27 @@ public class BookController {
         bookValidator.validate(book, bindingResult);
         if (bindingResult.hasErrors()) return "library/edit";
         bookDAO.update(id, book);
+        return "redirect:/library";
+    }
+
+    @GetMapping("/newBook")
+    public String newBook(@ModelAttribute("book") Book book){
+        return "library/new";
+    }
+
+    @PostMapping()
+    public String saveBook(@ModelAttribute("book") @Valid Book book, BindingResult bindingResult){
+        bookValidator.validate(book, bindingResult);
+        if(bindingResult.hasErrors()){
+            return "library/new";
+        }
+        bookDAO.save(book);
+        return "redirect:/library";
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable("id") int id){
+        bookDAO.delete(id);
         return "redirect:/library";
     }
 }

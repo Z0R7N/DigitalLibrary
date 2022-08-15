@@ -35,4 +35,12 @@ public class BookDAO {
     public Optional<Book> show(String title) {
         return jdbcTemplate.query("SELECT * FROM book WHERE title=?", new Object[]{title}, new BeanPropertyRowMapper<>(Book.class)).stream().findAny();
     }
+
+    public void delete(int id){
+        jdbcTemplate.update("DELETE FROM book WHERE id=?", id);
+    }
+
+    public void save(Book book) {
+        jdbcTemplate.update("INSERT INTO book (title, author, year) VALUES (?, ?, ?)", book.getTitle(), book.getAuthor(), book.getYear());
+    }
 }
