@@ -1,9 +1,9 @@
 # DigitalLibrary
  portfolio project - library optimization
  
- language - java
+ Application for writing to the database of readers of library subscribers and books of the library
  
- Spring Framework
+ language - Java Spring Framework
  
  ![image](https://user-images.githubusercontent.com/46117076/187591411-b2b5d722-f6e5-429e-adb4-1a04e2aa53db.png)
  
